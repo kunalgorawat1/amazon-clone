@@ -8,18 +8,24 @@ import {
   Routes,
 } from "react-router-dom";
 import Checkout from "./Checkout";
+import Login from "./Login";
 
 function App() {
   return (
     //BEM
     <Router>
       <div className="app">
-      <Header />
+        
         <Switch>
-          <Route path="/checkout">
-            <Checkout/>
+          <Route exact path="/login">
+            <Login />
           </Route>
-          <Route path="/">
+          <Route exact path="/checkout">
+            <Header />
+            <Checkout />
+          </Route>
+          <Route exact path="/">
+            <Header />
             <Home />
           </Route>
         </Switch>
